@@ -55,7 +55,7 @@ try{
 
 } catch(err){
 
-    console.log("Error connecting to the database!")
+    console.log("Error connecting to the database!", err)
 }
 
 app.use(errorHandler)

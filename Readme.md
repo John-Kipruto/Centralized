@@ -4,6 +4,8 @@ Centralized is a web app that is used by users to create their online profiles a
 
 ## Loom video link
 
+https://www.loom.com/share/3266cf9667ad4e5bbfc5c46823b94803?sid=2f0d77b3-9cad-46e3-a91f-c4cbd2cb753e
+
 ## App Functionalities
 
 * Create user

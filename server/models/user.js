@@ -15,6 +15,11 @@ const User = db.define(
             allowNull: false
         },
 
+        phoneNumber: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+
         password: {
             type: DataTypes.STRING,
             allowNull: false
