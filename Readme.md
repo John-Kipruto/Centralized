@@ -40,3 +40,17 @@ https://www.loom.com/share/3266cf9667ad4e5bbfc5c46823b94803?sid=2f0d77b3-9cad-46
 
 ![ALT Admin dashboard](./Screenshot%20from%202024-07-21%2019-10-16.png)
 
+## How to run the app on local machine
+
+### (NB: Ensure to change the db settings in server/config/database to match your SQL database settings)
+### (Ensure to have sql(MySQL) installed on your local machine)
+
+1. Fork and clone the project to your local machine
+2. cd into the project folder
+3. cd into the server folder
+4. run **npm install** to install the project dependencies
+5. run **npm run server** to start up the server
+6. navigate to the root of the project folder
+7. cd into the client directory
+8. run **npm install** to install dependencies.
+9. run **npm start** to start up the client
