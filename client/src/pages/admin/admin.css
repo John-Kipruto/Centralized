@@ -1,0 +1,85 @@
+.admin-signin.grid-container{
+    gap: 20px;
+}
+
+.admin-form-container{
+    display: grid;
+    align-items: center;
+    place-content: center;
+    background-color: whitesmoke;
+}
+
+/** Admin dashboard **/
+.admin-dashboard section{
+ padding: 20px 0;
+}
+
+.admin-dashboard .grid-container{
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px));
+}
+
+.admin-dashboard .stats-grid-container{
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.admin-dashboard .stat{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 15px;
+}
+
+.admin-dashboard .stat .icon-stat-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.admin-dashboard .stat .bi{
+    font-size: 60px;
+}
+
+
+.admin-dashboard .chart-container{
+    max-height: 450px;
+}
+
+.member  img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    max-width: 60px;
+}
+
+.admin-nav-outlet{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.admin-nav-outlet .admin-nav-container{
+    align-self: start;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.admin-nav-outlet .navbar{
+    width: 250px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.admin-nav-outlet .navbar-nav{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    
+}
+
+.admin-nav-outlet a{
+    padding: 5px 0;
+    margin: 5px auto;
+    width: 180px;
+}
