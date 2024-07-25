@@ -28,6 +28,15 @@ const User = db.define(
         image: {
             type: DataTypes.BLOB("long"),
             allowNull: true
+        },
+        active: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+            defaultValue: true
+        },
+        role: {
+            type: DataTypes.STRING,
+            defaultValue: "user"
         }
     }
 )

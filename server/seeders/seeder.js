@@ -53,12 +53,17 @@ async function seedData(){
     await User.create({name: "metro bomming", email: "metro@gmail.com", phoneNumber: "+254756456789", password: test, image: happy})
     await User.create({name: "willy albert", email: "willy@gmail.com", phoneNumber: "+254756456789", password: test, image: ladyavatar})
     await User.create({name: "banks alif", email: "banks@gmail.com", phoneNumber: "+254756456789", password: test, image: labrinth})
-    await User.create({name: "admin", email: "admin@gmail.com", phoneNumber: "+254756456789", password: test, image: happy})
-
+    await User.create({name: "admin", email: "admin@gmail.com", role: "admin", phoneNumber: "+254756456789", password: test, image: happy})
+    await User.create({name: "jessy jeffs", active:false, email: "jessy@gmail.com", phoneNumber: "+254756456789", password: test, image: happy})
+    await User.create({name: "jules mainoo", active:false, email: "mainjules@gmail.com", phoneNumber: "+254756456789", password: test, image: behance})
+    await User.create({name: "abdi tesharif", active:false, email: "testharif@gmail.com", phoneNumber: "+254756456789", password: test, image: bridge})
+    await User.create({name: "james legos", active:false, email: "jameslegos@gmail.com", phoneNumber: "+254756456789", password: test, image: classic})
+    await User.create({name: "alice janes", active:false, email: "alicejanes@gmail.com", phoneNumber: "+254756456789", password: test, image: cool})
+    
     /** Verify all data is put in the database */
     console.log(".... done seeding.")
 
-
+    console.log(await User.findAll())
 
 
 }

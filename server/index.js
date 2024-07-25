@@ -12,6 +12,7 @@ import User from './models/user.js'
 import seedData from './seeders/seeder.js'
 import { errorHandler } from './middlewares/errorMiddleware.js'
 import userRoutes from './routes/userRoutes.js'
+import authRoutes from './routes/authRoutes.js'
 
 
 /** Enable .env files to be used */
@@ -34,12 +35,13 @@ app.use(cookieParser())
 app.use(express.json({limit : '50mb',extended : true}))
 app.use(express.urlencoded({limit : '50mb',extended : true}))
 app.use(fileUpload())
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 
 app.use('/api/users', userRoutes)
+app.use('/api/auth', authRoutes)
+
 try{
 
     await db.authenticate()

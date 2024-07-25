@@ -39,7 +39,7 @@ const getOne = asyncHandler(async (req, res) => {
 const registerUser = asyncHandler(async (req, res) => {
     console.log(req.body)
     console.log("Creating....")
-    let {name, email, password, image} = req.body
+    let {name, email, password, image, phoneNumber} = req.body
     let defaultImage;
 
     if(image === ""){
@@ -71,7 +71,8 @@ const registerUser = asyncHandler(async (req, res) => {
         name,
         email,
         password: hashedPassword,
-        image: defaultImage
+        image: defaultImage,
+        phoneNumber
     })
 
     if(user){
@@ -80,55 +81,6 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
     
-})
-
-
-/**
- * @desc Authenticate user
- * GET api/users/auth
- * @access Private
- */
-const authenticateUser = asyncHandler(async (req, res) => {
-    res.json(req.user)
-})
-
-
-/**
- * @desc Login a user
- * POST api/users/login
- * @access Public
- */
-const loginUser = asyncHandler(async (req, res) => {
-    const {email, password} = req.body
-    /**Check if user exists in the db */
-    const user = await User.findOne({where: {email}})
-
-    /** Check if passwords match */
-    const passwordsMatch = await bcrypt.compare(password, user.password)
-    
-    if(user && passwordsMatch){
-        generateToken(res, user.id)
-        res.json(user)
-    } else{
-        res.status(400)
-        throw new Error("Invalid email or password")
-    }
-})
-
-
-/**
- * @desc Logout a user
- * DELETE api/users/logout
- * @access Public
- */
-const logoutUser = asyncHandler(async (req, res) => {
-    res.cookie('jwt', '', {
-        httpOnly: true,
-        expiresIn: new Date(0)
-    })
-    res.status(200).json({
-        message: "User logged out!"
-    })
 })
 
 
@@ -170,9 +122,6 @@ const deleteUser = asyncHandler(async (req, res) => {
 
 export {
     registerUser,
-    authenticateUser,
-    loginUser,
-    logoutUser,
     updateUser,
     deleteUser,
     getAll,
